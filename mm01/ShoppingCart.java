@@ -1,5 +1,3 @@
-package mm01;
-
 import java.util.ArrayList;
 
 public class ShoppingCart {
@@ -18,16 +16,10 @@ public class ShoppingCart {
 			total += item.cost * item.quantity;
 		}
 
+    	TaxService taxService = new TaxFactory().getTaxService(customer);
+    	total += taxService.calculateTax(total);
 
-        double tax;
-        if (customer.stateCode == "DE")
-            tax = total * .08d;
-        else if (customer.stateCode == "FR")
-            tax = total * .09d;
-        else
-            tax = .03d;
 
-        total = total + tax;
         return total;
     }
     
@@ -54,8 +46,7 @@ public class ShoppingCart {
     		String account = PayPalAccount.findAccount(new Customer());
     		acc.pay(amount, account);
     	} // TODO Add MasterCard and Visa services in the future
-    	
-    	
+
     }
 
 

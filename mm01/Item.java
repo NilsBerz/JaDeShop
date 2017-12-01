@@ -1,5 +1,3 @@
-package mm01;
-
 public class Item {
     public int quantity;
     public String code;

@@ -1,5 +1,3 @@
-package mm01;
-
 /**
  * Third party API of PayPal service.
  * @author Janis
