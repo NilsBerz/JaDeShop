@@ -8,6 +8,7 @@ public class Main {
 		Shop s = new Shop();
 		s.addItem(new Item(2,"bla",9.4));
 		
+		
 		System.out.println(s.getAllItems(new Customer()).toString());
 
 	}
