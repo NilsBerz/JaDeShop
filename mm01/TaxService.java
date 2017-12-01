@@ -1,21 +1,27 @@
+package mm01;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
 
 class TaxService {
-    ArrayList<StateTax> StateTaxes = new ArrayList<StateTax>();
+    ArrayList<StateTax> stateTaxes = new ArrayList<StateTax>();
     
     TaxService(){
     }
 
+    public void addStateTax(String stateCode, double stateTax){
+        stateTaxes.add(new StateTax(stateCode, stateTax));
+    }
+
     ArrayList<StateTax> getStateTaxes(){
-        return StateTaxes;
+        return stateTaxes;
     }
 
     public double getStateTax(String stateCode){
-        for(int i =0; i<StateTaxes.size();i++){
-            if (StateTaxes.get(i).getStateCode() == stateCode){
-                return StateTaxes.get(i).getStateTax();
+        for(int i =0; i<stateTaxes.size();i++){
+            if (stateTaxes.get(i).getStateCode() == stateCode){
+                return stateTaxes.get(i).getStateTax();
             }
         }
         return 0d;

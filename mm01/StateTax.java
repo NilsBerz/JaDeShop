@@ -1,4 +1,4 @@
-
+package mm01;
 
 class StateTax{
     String StateCode = null;

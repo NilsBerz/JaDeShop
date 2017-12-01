@@ -7,7 +7,8 @@ public class Main {
 		
 		Shop s = new Shop();
 		s.addItem(new Item(2,"bla",9.4));
-		
+		TaxService tx = new TaxService();
+		tx.addStateTax("FR", 0.1d);
 		
 		System.out.println(s.getAllItems(new Customer()).toString());
 
